@@ -1,4 +1,14 @@
-package com.example.hotel_booking.Model;
+package com.example.hotel.model;
 
-public class CancellationPolicy {
-}
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record CancellationPolicy(
+        LocalDateTime from,
+        LocalDateTime to,
+        BigDecimal penalty
+) {}
